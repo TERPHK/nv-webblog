@@ -39,7 +39,7 @@ let users =[
 
   
 
-    delete users.splice(0,1)
+    delete users.splice(0,2)
     console.log('\n** After Delete\n')
 
     for(let i=0 ; i<users.length ; i++){
