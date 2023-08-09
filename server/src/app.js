@@ -10,6 +10,11 @@ app.get('/status', function (req,res){
 
 })
 
+
+app.get('/hello/:name', function (req,res) {
+    console.log('hello - ' + req.params.person)
+    res.send('sey hello with ' + req.params.person)
+})
  
 
 let port = 8081
