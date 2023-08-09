@@ -1,0 +1,11 @@
+{
+  "name": "ter-webblog-server",
+  "version": "1.0.0",
+  "description": "nodejs vuejs webblog server (back end)",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "phakkharaphon numnue",
+  "license": "ISC"
+}
