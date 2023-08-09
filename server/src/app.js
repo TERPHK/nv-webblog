@@ -6,7 +6,7 @@ const app = express()
 
 app.get('/status', function (req,res){
 
-    res.send('Hello nodejs server 12345')
+    res.send('Hello nodejs server nodemon')
 
 })
 
