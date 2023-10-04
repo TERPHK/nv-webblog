@@ -12,7 +12,7 @@
 <script>
 import AuthenService from '@/services/AuthenService'
 export default {
-    ddata() {
+    data() {
         return {
             email: '',
             password: '',
@@ -38,7 +38,7 @@ export default {
                 this.error = error.response.data.error
                 this.email = ''
                 this.password = ''
-                
+
 
             }
         }
@@ -46,7 +46,6 @@ export default {
 
 }
 </script>
-
 <style scoped>
 .error {
     color: red;
