@@ -15,6 +15,7 @@
             <p><button v-on:click="navigateTo('/user/' + user.id)">ดูข้อมูลผู้ใช้</button></p>
             <p><button v-on:click="navigateTo('/users')">กลับ</button></p>
             <button v-on:click="deleteUser(user)">ลบข้อมูล</button>
+            <p><button v-on:click="logout">Logout</button></p>
             <hr>
         </div>
     </div>
@@ -42,18 +43,28 @@ export default {
         },
         async deleteUser(user) {
             let result = confirm("want to delete?")
-            if(result) {
-            try {
-                await UsersService.delete(user)
-                this.refreshData()
-            } catch (err) {
-                console.log(err)
+            if (result) {
+                try {
+                    await UsersService.delete(user)
+                    this.refreshData()
+                } catch (err) {
+                    console.log(err)
+                }
             }
-        }
         },
         async refreshData() {
             this.users = (await UsersService.index()).data
         }
+    },
+    methods: {
+        logout() {
+            this.$store.dispatch('setToken', null)
+            this.$store.dispatch('setUser', null)
+            this.$router.push({
+                name: 'login'
+            })
+        },
+
     },
 
 

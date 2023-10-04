@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
 require('./routes')(app)
+require('./userPassport')
+require('./routes')(app)
+
 
 
 
